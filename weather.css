@@ -10,3 +10,25 @@ main{
   text-align: center;
   margin: 8% auto auto auto;
 }
+
+.data_container{
+  margin: auto;
+  width: auto;
+  /*border: 2px black solid;*/
+}
+
+#value, #cityName{
+  font-size: 2em;
+}
+
+#cityName{
+  margin: 2% auto;
+}
+
+#unit{
+  font-size: 1.6em;
+}
+
+#icon{
+  font-size: 2%;
+}

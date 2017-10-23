@@ -34,13 +34,13 @@ function changeUnit(){
   //console.log($("#unit").attr('class'));
   if($("#unit").attr('class') === 'celsius'){
     $("#unit").attr('class', 'faren');
-    $("#unit").html('F');
+    $("#unit").html('°F');
     infos.temp = infos.temp * 9/5 + 32;
     $("#value").html((infos.temp).toFixed(2));
   }
   else {
     $("#unit").attr('class', 'celsius');
-    $("#unit").html('C');
+    $("#unit").html('°C');
     infos.temp = (infos.temp - 32) * 5/9;
     $("#value").html((infos.temp).toFixed(2));
   }
@@ -56,15 +56,15 @@ function getWeather(position){
       addInfos('temp', data.main.temp);
       addInfos('desc', data.weather[0].description);
       addInfos('icon', data.weather[0].icon);
-
+      $("#icon").append("<img src='" + infos.icon + "' alt='image of current weather' >")
       if($("#unit").hasClass('celsius')){
         $("#value").html(infos.temp);
-        $("#unit").html('C');
+        $("#unit").html('°C');
       }
       else {
         infos.temp = infos.temp * 9/5 + 32;
         $("#value").html(infos.temp);
-        $("#unit").html('F');
+        $("#unit").html('°F');
       }
 
   }, 'jsonp');
